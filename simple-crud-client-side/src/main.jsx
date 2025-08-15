@@ -5,10 +5,16 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import ClientSide from './Components/ClientSide';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <ClientSide></ClientSide>,
+    children: [
+      {
+
+      }
+    ]
   },
 ]);
 createRoot(document.getElementById('root')).render(
