@@ -6,13 +6,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ClientSide from './Components/ClientSide';
+import Users from './Components/Users';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <ClientSide></ClientSide>,
     children: [
+     
       {
-
+        path: '/users',
+        element: <Users></Users>,
+        loader:()=>fetch('http://localhost:5000/users')
       }
     ]
   },
